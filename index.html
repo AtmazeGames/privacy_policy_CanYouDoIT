@@ -1,44 +1,116 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Polityka Prywatności</title>
-  <!-- Bootstrap CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-  />
+  <title>Privacy Policy – Dirty Questions App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <style>
+    .language-switch, .theme-switch {
+      margin-left: 1rem;
+    }
+    .logo {
+      max-width: 150px;
+      height: auto;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <div class="container">
-      <a class="navbar-brand" href="#">Moja Aplikacja</a>
+  <div class="container py-4">
+
+    <!-- Top bar: logo + switches -->
+    <div class="top-bar">
+      <img src="ATMAZE_logo_1024.png" alt="App Logo" class="logo" />
+
+      <div>
+        <!-- Language Switcher -->
+        <select class="form-select d-inline-block language-switch" style="width: auto;">
+          <option value="en" selected>EN</option>
+          <option value="pl">PL</option>
+        </select>
+
+        <!-- Dark Mode Switcher -->
+        <button class="btn btn-outline-secondary theme-switch">🌙 Dark</button>
+      </div>
     </div>
-  </nav>
 
-  <!-- Logo na środku strony -->
-  <div class="text-center mb-4">
-    <img src="ATMAZE_logo_1024.png" alt="Logo aplikacji" style="max-width: 200px; height: auto;" />
+    <!-- Privacy Policy Content -->
+    <h1 class="mb-4 text-center">Privacy Policy</h1>
+
+    <p><strong>XYZ</strong> built the <strong>Dirty Questions</strong> app as a Free app...</p>
+
+    <p>This page is used to inform visitors regarding our policies...</p>
+
+    <p>If you choose to use our Service, then you agree to the collection...</p>
+
+    <hr>
+
+    <h2>Information Collection and Use</h2>
+    <p>For a better experience...</p>
+    <ul>
+      <li>AdMob</li>
+      <li>RevenueCat</li>
+    </ul>
+
+    <h2>Log Data</h2>
+    <p>We want to inform you that whenever you use our Service...</p>
+
+    <h2>Cookies</h2>
+    <p>Cookies are files with a small amount of data...</p>
+
+    <h2>Service Providers</h2>
+    <p>We may employ third-party companies and individuals to:</p>
+    <ul>
+      <li>Facilitate our Service</li>
+      <li>Provide the Service on our behalf</li>
+      <li>Perform Service-related services</li>
+      <li>Help us analyze how our Service is used</li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>We value your trust in providing us your Personal Information...</p>
+
+    <h2>Links to Other Sites</h2>
+    <p>This Service may contain links to other sites...</p>
+
+    <h2>Children’s Privacy</h2>
+    <p>These Services are not directed to anyone under the age of 13...</p>
+
+    <h2>Changes to This Privacy Policy</h2>
+    <p>We may update our Privacy Policy from time to time...</p>
+    <p><strong>This policy is effective as of April 10, 2025.</strong></p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions, contact us at: 
+      <a href="mailto:contact@xyz.dev">contact@xyz.dev</a>
+    </p>
   </div>
 
-  <div class="container">
-    <h1 class="mb-4">Polityka Prywatności</h1>
-    <p>
-      Tutaj wklej treść swojej Polityki Prywatności. Opisz, jakie dane
-      pobierasz, w jaki sposób je przechowujesz i w jakim celu są
-      wykorzystywane.
-    </p>
-    <p>
-      Staraj się używać prostego języka i pamiętaj o informacjach wymaganych
-      przez przepisy RODO (jeśli obowiązują Cię unijne regulacje).
-    </p>
-    <!-- Dodawaj kolejne sekcje w zależności od potrzeb -->
-  </div>
+  <!-- Bootstrap JS + Dark Mode Toggle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const themeToggle = document.querySelector('.theme-switch');
+    const htmlTag = document.documentElement;
 
-  <!-- Bootstrap JavaScript (opcjonalnie, jeśli potrzebujesz interaktywnych elementów) -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  ></script>
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlTag.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      htmlTag.setAttribute('data-bs-theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    });
+
+    // Language switch (placeholder – not functional yet)
+    const langSelect = document.querySelector('.language-switch');
+    langSelect.addEventListener('change', (e) => {
+      alert('Language switch to: ' + e.target.value + ' (demo only)');
+      // You can implement actual translations here in future
+    });
+  </script>
 </body>
 </html>
